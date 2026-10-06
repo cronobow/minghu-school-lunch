@@ -73,14 +73,14 @@ function renderPagination(container, totalItems, page, pageSize, onChange) {
     return;
   }
 
-  const visiblePages = totalPages <= 5
-    ? Array.from({length: totalPages}, (_, index) => index + 1)
-    : [...new Set([1, Math.max(1, page - 1), page, Math.min(totalPages, page + 1), totalPages])].sort((a, b) => a - b);
-  const pageButtons = visiblePages.map((pageNumber, index) => {
-    const gap = index > 0 && pageNumber - visiblePages[index - 1] > 1
-      ? '<span class="page-ellipsis" aria-hidden="true">…</span>' : '';
-    return `${gap}<button class="page-button" type="button" data-page="${pageNumber}"${pageNumber === page ? ' aria-current="page"' : ''} aria-label="第 ${pageNumber} 頁">${pageNumber}</button>`;
-  }).join('');
+  const groupStart = Math.floor((page - 1) / 3) * 3 + 1;
+  const groupEnd = Math.min(groupStart + 2, totalPages);
+  const ellipsis = '<span class="page-ellipsis" aria-hidden="true">…</span>';
+  const pageButtons = (groupStart > 1 ? ellipsis : '') +
+    Array.from({length: groupEnd - groupStart + 1}, (_, index) => {
+      const pageNumber = groupStart + index;
+      return `<button class="page-button" type="button" data-page="${pageNumber}"${pageNumber === page ? ' aria-current="page"' : ''} aria-label="第 ${pageNumber} 頁">${pageNumber}</button>`;
+    }).join('') + (groupEnd < totalPages ? ellipsis : '');
 
   container.innerHTML = `
     <button class="page-button" type="button" data-page="${page - 1}" ${page === 1 ? 'disabled' : ''}>上一頁</button>
