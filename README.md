@@ -2,6 +2,6 @@
 
 整理114學年度起公開會議、記點紀錄、群組公告與臺北市教育局新聞稿。非學校或政府官方網站，原始公開來源優先於本站摘要。
 
-網站：https://gh.maxlab.tw/minghu-school-lunch/
+網站：https://minghu-school-lunch.gh.maxlab.tw/
 
 本 repository 僅包含可公開的靜態網站，不包含本機監廚資料庫或私人附件。
