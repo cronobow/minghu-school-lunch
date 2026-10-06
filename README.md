@@ -11,7 +11,7 @@
 排程目標為每天 Asia/Taipei 06:00、13:00，包含週末與國定假日。排程由 Codex app 支援的 automation 管理，勿另建 cron、launchd 或修改內部資料庫；網站頁面本身不會啟動查詢。
 
 1. 先讀工作區及上層 AGENTS.md、適用的 .agents/skills，執行 git status。以最新 origin/main 為基底；若原 checkout 有未提交或未推送工作，另建乾淨 checkout，不 reset、stash 或推送他人工作。
-2. 直讀 https://bhps-lunch.blogspot.com/feeds/posts/default?alt=json&max-results=50 與 blog 的公告、月份菜單預告、相關會議頁。按原始 URL／文章 ID 去重；保留來源、原日期、有效歷史內容及適用學校。月菜單及水果預告是計畫，不能當成當日實餐。當日菜色僅在當日公開文章存在且已目視看過其原照後整理；沒有文章時不猜測、不沿用舊照片作今日照片。此站每日菜色仍連至原資訊網。
+2. 直讀 https://bhps-lunch.blogspot.com/feeds/posts/default?alt=json&max-results=50 與 blog 的公告、月份菜單預告、相關會議頁。按原始 URL／文章 ID 去重；未標示原文發表日期的資訊專區不列入公告清單，不以查閱日補日期；保留來源、原日期、有效歷史內容及適用學校。月菜單及水果預告是計畫，不能當成當日實餐。當日菜色僅在當日公開文章存在且已目視看過其原照後整理；沒有文章時不猜測、不沿用舊照片作今日照片。此站每日菜色仍連至原資訊網。
 3. 查閱明湖官方 https://www.mhups.tp.edu.tw/ 的行政公告（搜尋午餐）及其公開營養午餐專區；查教育局 https://www.doe.gov.taipei/News.aspx?n=B3DDF0458F0FFC11&sms=72544237BBE4C5F6 與衛生局 https://health.gov.taipei/ 的午餐／食安消息。讀原文後再摘要，不把食材檢驗、午餐留樣與環境檢驗混為同一結果。需要登入、憑證錯誤或權限變更時停止該來源，不新增 credentials、不繞過憑證驗證。
 4. footer `#update-status` 使用真正查閱完成的 Asia/Taipei 時間及含 +08:00 的 time datetime。全部必要來源查核成功才寫完整查閱；部分來源失敗須標「部分」及失敗來源。沒有新消息可以只更新查閱時間，不虛構消息。全部失敗不推進成功時間。最後成功更新只代表已通過檢查且正式站驗證成功的網站版本，不代表每個來源都查核成功。
 5. 檢查 git diff、git diff --check；以 node --check 檢查 meetings.js 及抽出的 inline script；檢查 HTML 連結、重複資料與公開檔案清單。只明確 stage index.html、meetings.js、README.md、CNAME、.nojekyll 中必要檔，絕不使用 git add .。私人監廚資料庫、LINE 附件、下載原照、查核日誌、憑證及本機設定不得加入 repository。
