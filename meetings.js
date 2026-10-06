@@ -73,7 +73,7 @@ function renderPagination(container, totalItems, page, pageSize, onChange) {
     return;
   }
 
-  const groupStart = Math.floor((page - 1) / 3) * 3 + 1;
+  const groupStart = Math.max(1, Math.min(page - 1, totalPages - 2));
   const groupEnd = Math.min(groupStart + 2, totalPages);
   const ellipsis = '<span class="page-ellipsis" aria-hidden="true">…</span>';
   const pageButtons = (groupStart > 1 ? ellipsis : '') +
