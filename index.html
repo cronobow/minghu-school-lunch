@@ -24,6 +24,8 @@
     .entity-tag.school-kangning,.meeting-tab.school-kangning{color:#334d98;background:#e7ebf9;border-color:#b0bce8}.meeting-tab.school-kangning[aria-selected="true"]{color:#fff;background:#334d98;border-color:#334d98}
     .entity-tag.school-minghu,.meeting-tab.school-minghu{color:#285a1c;background:#e5f1dd;border-color:#b8d4a8}.meeting-tab.school-minghu[aria-selected="true"]{color:#fff;background:#285a1c;border-color:#285a1c}
     .entity-tag.group{color:#543a7a;background:#efe8f6;border-color:#cbb9df}
+    .page-ellipsis{color:var(--muted);font-weight:700}
+    @media(max-width:620px){.pagination{gap:6px}.pagination>.page-button:first-child,.pagination>.page-button:last-child{order:-1;flex-basis:calc(50% - 3px)}.pagination>.page-button{padding-inline:10px}.page-ellipsis{padding-inline:1px}}
   </style>
 </head>
 <body>
@@ -75,6 +77,6 @@
       matchMedia('(max-width:860px)').addEventListener('change', close);
     })();
   </script>
-  <script src="meetings.js?v=20261006-3"></script>
+  <script src="meetings.js?v=20261006-4"></script>
 </body>
 </html>
