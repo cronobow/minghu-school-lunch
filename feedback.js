@@ -45,7 +45,7 @@
   window.onFeedbackTurnstile = () => {
     widget = window.turnstile.render('#feedback-verification', {
       sitekey: config.sitekey, action: 'lunch_feedback', language: 'zh-tw', size: 'flexible',
-      callback: value => { token = value; button.disabled = busy; verificationStatus.textContent = '安全驗證完成，請填寫下方意見。'; },
+      callback: value => { token = value; button.disabled = busy; verificationStatus.textContent = '驗證完成'; },
       'expired-callback': () => { token = ''; button.disabled = true; verificationStatus.textContent = '驗證已過期，請重新驗證。'; },
       'error-callback': () => { token = ''; button.disabled = true; verificationStatus.textContent = '驗證無法載入，請確認網路後重新整理；重新整理前請先複製意見內容。'; }
     });
