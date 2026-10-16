@@ -29,7 +29,7 @@
     .pagination>.page-button[aria-label]{width:36px;height:36px;min-width:36px;min-height:36px;flex:0 0 36px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;line-height:1;font-size:.9rem}
     .feedback-role{border:0;padding:0;margin-inline:0}.feedback-role legend{font-weight:750;margin-bottom:8px}.feedback-radio-options{display:flex;flex-wrap:wrap;gap:20px;align-items:center;min-height:50px}.feedback-radio-options label{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}.feedback-radio-options input[type="radio"]{width:20px;min-width:20px;height:20px;margin:0;padding:0;accent-color:var(--forest-2)}
     .feedback-card{padding:28px;border:1px solid var(--line);border-radius:24px;background:var(--paper)}
-    .feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.feedback-field{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;min-width:0}.feedback-field label{font-weight:750}.feedback-field input,.feedback-field select,.feedback-field textarea{width:100%;min-width:0;padding:12px;border:1px solid #82917b;border-radius:10px;background:white;color:var(--ink);font:inherit}.feedback-field textarea{resize:vertical}.feedback-field :focus-visible{outline:3px solid var(--forest-2);outline-offset:3px}.feedback-help{font-size:.9rem;color:var(--muted)}.feedback-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.feedback-card button{font:inherit;font-weight:800;cursor:pointer}.feedback-card button:disabled{opacity:.55;cursor:not-allowed}#feedback-status{min-height:1.6em;overflow-wrap:anywhere}.nav-links{gap:18px}.nav-links a{white-space:nowrap}
+    .feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.feedback-field{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;min-width:0}.feedback-field label{font-weight:750}.feedback-field input,.feedback-field select,.feedback-field textarea{width:100%;min-width:0;padding:12px;border:1px solid #82917b;border-radius:10px;background:white;color:var(--ink);font:inherit}.feedback-field textarea{resize:vertical}.feedback-field :focus-visible{outline:3px solid var(--forest-2);outline-offset:3px}.feedback-help{font-size:.9rem;color:var(--muted)}.feedback-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.feedback-card button{font:inherit;font-weight:800;cursor:pointer}.feedback-card button:disabled{opacity:.55;cursor:not-allowed}#feedback-verification{margin-bottom:20px}#feedback-status{min-height:1.6em;overflow-wrap:anywhere}.nav-links{gap:18px}.nav-links a{white-space:nowrap}
     @media(max-width:1020px) and (min-width:861px){.nav{flex-wrap:wrap}.nav-links{flex-basis:100%;justify-content:space-between}}
     @media(max-width:620px){.feedback-card{padding:20px}.feedback-grid{grid-template-columns:1fr;gap:0}}
   </style>
@@ -66,6 +66,7 @@
       <div class="feedback-card">
         <p class="section-note">本表單僅供營養午餐委員意見蒐集用。您回饋的意見可能出現在公開記錄中，請勿提供您的詳細隱私資料。<br>本信箱不是校方正式申訴或通報管道，若有餐點異物或身體不適等即時反應，請先告知級任老師，或直接與校方反應。<br>如果有特別好吃或喜歡的餐點，也歡迎告訴我們喔！</p>
         <form id="feedback-form">
+          <div id="feedback-verification"></div>
           <div class="feedback-grid">
             <div class="feedback-field"><label for="feedback-name">姓名／暱稱（選填）</label><input id="feedback-name" name="name" type="text" maxlength="50" autocomplete="off"></div>
             <fieldset class="feedback-field feedback-role"><legend>身分（選填）</legend><div class="feedback-radio-options"><label><input type="radio" name="role" value="家長">家長</label><label><input type="radio" name="role" value="學生">學生</label><label><input type="radio" name="role" value="教職員">教職員</label><label><input type="radio" name="role" value="其他">其他</label></div></fieldset>
@@ -73,7 +74,6 @@
           <div class="feedback-field"><label for="feedback-class">班級（選填）</label><input id="feedback-class" name="className" type="text" maxlength="30" autocomplete="off"></div>
           <div class="feedback-field"><label for="feedback-message">意見或建議（必填）</label><textarea id="feedback-message" name="message" rows="6" minlength="5" maxlength="300" required aria-describedby="feedback-message-help" placeholder="歡迎分享你對明湖營養午餐的意見或建議。"></textarea><span class="feedback-help" id="feedback-message-help">請填寫 5～300 字。</span></div>
           <div class="feedback-trap" aria-hidden="true"><label for="feedback-website">請留空</label><input id="feedback-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-          <div id="feedback-verification"></div>
           <p id="feedback-status" role="status" aria-live="polite">意見信箱尚未開放，暫時無法送出。</p>
           <button class="record-link" type="submit" disabled>送出意見</button>
           <noscript><p>請啟用 JavaScript 才能使用意見信箱。</p></noscript>
