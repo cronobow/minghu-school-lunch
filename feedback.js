@@ -27,7 +27,10 @@
     } finally {
       busy = false; token = ''; form.removeAttribute('aria-busy');
       button.disabled = true;
-      if (window.turnstile && widget !== undefined) window.turnstile.reset(widget);
+      if (window.turnstile && widget !== undefined) {
+        verificationStatus.textContent = '正在進行安全驗證…';
+        window.turnstile.reset(widget);
+      }
     }
   });
   if (['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname)) {
